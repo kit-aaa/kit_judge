@@ -54,7 +54,7 @@
         padding-top: 40px;
         padding-bottom: 40px;
         width: 100%;
-        max-width: 20rem;
+        max-width: 15rem;
         padding: 15px;
         margin: auto;
     }
@@ -76,10 +76,10 @@
     } 
 
     #login-form button[id="register-btn"] {
-        margin-right: 2rem;
+        margin-right: 1rem;
     }
 
     #login-form button[id="login-btn"] {
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 </style>
