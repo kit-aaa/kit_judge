@@ -11,31 +11,75 @@
     } from "svelte-use-form";
 
     const form = useForm();
+
+    const requiredMessage = "필수 기입 항목입니다.";
 </script>
 
-<form use:form>
-    <h1>로그인</h1>
-    <label for="id">아이디</label>
-    <input type="text" name="id" use:validators={[required]} />
-    <HintGroup for="id">
-        <Hint on="required">This is a mandatory field</Hint>
-    </HintGroup>
+<div id="login-form">
+    <form use:form id=login>
+        <h1>로그인</h1>
 
-    <label for="password">비밀번호</label>
-    <input type="password" name="password" use:validators={[required]} />
-    <Hint for="password" on="required">This is a mandatory field</Hint>
+        <div class="input-box">
+            <input type="text" class="form-control" id="floatingInput" name="id" use:validators={[required]} placeholder="아이디" />
+            <!-- <HintGroup for="id" class="hint">
+                <Hint on="required">{requiredMessage}</Hint>
+            </HintGroup> -->
+        </div>
+    
+        <div class="input-box">
+            <input type="password" class="form-control" id="floatingInput" name="password" use:validators={[required]} placeholder="비밀번호"/>
+            <!-- <HintGroup for="password" class="hint">
+                <Hint on="required">{requiredMessage}</Hint>
+            </HintGroup> -->
+        </div>
+        
+        <button id="register-btn" type="button" class="btn btn-outline-secondary" onclick="location.href='/#/user-register'">회원가입</button>
+        <button id="login-btn" form="login" class="btn btn-outline-secondary" disabled={!$form.valid} >로그인</button>
+    </form>
+</div>
 
-    <button disabled={!$form.valid}>Login</button>
-</form>
-<a href="/user-register" use:link>회원가입</a>
-
-<pre>
-{JSON.stringify($form, null, " ")}
-</pre>
+<!-- <pre>
+    {JSON.stringify($form, null, " ")}
+</pre> -->
 
 <style>
     :global(.touched:invalid) {
         border-color: red;
         outline-color: red;
+    }
+
+    #login-form{
+        display: block;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        width: 100%;
+        max-width: 20rem;
+        padding: 15px;
+        margin: auto;
+    }
+
+    #login-form .input-box {
+        margin-bottom: 1rem;
+    }
+
+    :Hint {
+        position: relative;
+    }
+
+    #login-form input {
+        margin-bottom: -1px;
+    }
+
+    #login-form h1 {
+        padding-bottom: 1rem;
+    } 
+
+    #login-form button[id="register-btn"] {
+        margin-right: 2rem;
+    }
+
+    #login-form button[id="login-btn"] {
+        margin-left: 2rem;
     }
 </style>

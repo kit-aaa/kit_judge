@@ -13,7 +13,7 @@
 
     const form = useForm();
 
-    const requiredMessage = "This field is required";
+    const requiredMessage = "필수 기입 항목입니다.";
 </script>
 
 <main>
@@ -43,10 +43,10 @@
         />
         <HintGroup for="password">
             <Hint on="required">{requiredMessage}</Hint>
-            <Hint on="minLength" hideWhenRequired let:value
-                >This field must have at least {value} characters.</Hint
-            >
-            <Hint on="containNumbers" hideWhen="minLength" let:value>
+            <Hint on="minLength" hideWhenRequired let:value>
+                This field must have at least {value} characters.
+            </Hint>
+            <Hint on="containNumbers" hideWhen="minLength" let:value> 
                 This field must contain at least {value} numbers.
             </Hint>
         </HintGroup>
@@ -59,16 +59,18 @@
         />
         <HintGroup for="passwordConfirmation">
             <Hint on="required">{requiredMessage}</Hint>
-            <Hint on="passwordMatch" hideWhenRequired
-                >Passwords do not match</Hint
-            >
-        </HintGroup><br />
+            <Hint on="passwordMatch" hideWhenRequired>
+                Passwords do not match
+                </Hint>
+        </HintGroup>
+        <br>
 
         <button disabled={!$form.valid} on:click|preventDefault> 제출 </button>
     </form>
-    <pre>
+
+    <!-- <pre>
 		{JSON.stringify($form, null, 1)}
-	</pre>
+	</pre> -->
 </main>
 
 <style>
@@ -82,9 +84,9 @@
         justify-content: space-around;
     }
 
-    pre {
+    /* pre {
         height: 80vh;
         overflow: auto;
         font-size: 12px;
-    }
+    } */
 </style>
