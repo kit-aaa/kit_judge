@@ -36,8 +36,17 @@
             </div>
         </div>
             
-        <button id="register-btn" type="button" class="btn btn-outline-secondary" onclick="location.href='/#/user-register'">회원가입</button>
-        <button id="login-btn" form="login" class="btn btn-outline-secondary" disabled={!$form.valid} >로그인</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <button id="register-btn" type="button" class="btn btn-outline-secondary" onclick="location.href='/#/user-register'">회원가입</button>
+                </div>
+
+                <div class="col-sm-6">
+                    <button id="login-btn" form="login" class="btn btn-outline-secondary" disabled={!$form.valid} >로그인</button>      
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 
@@ -79,11 +88,12 @@
         padding-bottom: 1rem;
     } 
 
-    #login-form button[id="register-btn"] {
-        margin-right: 1rem;
+    #login-form .col-sm-6 {
+        padding-left: 6px;
+        padding-right: 6px;
     }
 
-    #login-form button[id="login-btn"] {
-        margin-left: 1rem;
+    #login-form button {
+        width: 5.7rem;
     }
 </style>

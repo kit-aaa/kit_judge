@@ -8,7 +8,8 @@
         { id: 3, text: `강의실 2` },
     ];
 
-    // 로그인 여부
+    // 로그인 여부 (임시)
+
     let user = {loggedIn:true};
     // let user = {loggedIn:false};
 </script>
