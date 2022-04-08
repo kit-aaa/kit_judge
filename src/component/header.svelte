@@ -14,8 +14,7 @@
 </script>
 
 <header>
-    <p>금오공대 과제 채점 시스템</p>
-    <a href="/" use:link>Home</a>
+    <button type="button" class="btn btn-outline-secondary btn-light" onclick="location.href='/'">HOME</button>
     {#if user.loggedIn}
         <form>
             <select bind:value={selected}>
@@ -36,7 +35,4 @@
         display: flex;
     }
 
-    p {
-        margin: 0;
-    }
 </style>
