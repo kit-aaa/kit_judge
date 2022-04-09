@@ -47,10 +47,14 @@
     .container {
         margin: 0;
         padding: 0;
-        max-width: 1980px;
+        max-width: 1920px;
         height: 4rem;
         background-color: rgb(155, 155, 155);
         text-align: center;
+    }
+
+    .row {
+        width: 100%
     }
 
     .container .col-lg-2 div{
