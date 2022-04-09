@@ -15,62 +15,50 @@
 </script>
 
 <div class="container">
-    <header class="d-flex justify-content-center py-3">
-        <ul class="nav nav-pills">
-            <li class="nav-item"><button type="button" class="btn btn-outline-secondary btn-light" onclick="location.href='/'">HOME</button></li>
-            <li class="nav-item">
-                {#if user.loggedIn}
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-outline-secondary btn-light dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        강의실 선택
-                        </button>
-                
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            {#each options as option}
-                                <li><a class="dropdown-item" href="/">{option.text}</a></li>
-                            {/each}
-                        </ul>
-                    </div>
-                {/if}
-            </li>
-        </ul>
-    </header>
+    <div class="row">
+        <div class="col col-lg-4"></div>
+        <div class="col col-lg-2">
+            <div class="home-btn">
+                <button type="button" class="btn btn-outline-secondary btn-light" onclick="location.href='/'">HOME</button>
+            </div>
+        </div>
+
+        <div class="col col-lg-2">
+            {#if user.loggedIn}
+                <div class="dropdown">
+                    <button type="button" class="btn btn-outline-secondary btn-light dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    강의실 선택
+                    </button>
+            
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {#each options as option}
+                            <li><a class="dropdown-item" href="/">{option.text}</a></li>
+                        {/each}
+                    </ul>
+                </div>
+            {/if}
+
+        </div>
+        <div class="col col-lg-4"></div>
+    </div>
 </div>
 
-<!-- <header>
-    <div class="home-btn">
-        <button type="button" class="btn btn-outline-secondary btn-light" onclick="location.href='/'">HOME</button>
-    </div>
-
-    {#if user.loggedIn}
-        <div class="dropdown">
-            <button type="button" class="btn btn-outline-secondary btn-light dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            강의실 선택
-            </button>
-    
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                {#each options as option}
-                    <li><a class="dropdown-item" href="/">{option.text}</a></li>
-                {/each}
-            </ul>
-        </div>
-    {/if}
-</header> -->
-
 <style>
-    header {
-        background-color: rgb(155, 155, 155);
-        margin: 0;
-        display: flex;
-    }
-
     .container {
-        max-width: 1980px;
+        margin: 0;
         padding: 0;
+        max-width: 1980px;
+        height: 4rem;
+        background-color: rgb(155, 155, 155);
+        text-align: center;
     }
 
-    .nav-item {
-        margin: 0rem 1rem;
+    .container .col-lg-2 div{
+        line-height: 4rem;
+    }
+
+    .dropdown-menu {
+        line-height: 2rem;
     }
 
     .dropdown-item {
