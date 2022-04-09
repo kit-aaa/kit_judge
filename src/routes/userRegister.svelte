@@ -116,6 +116,7 @@
         max-width: 15rem;
         padding: 1rem;
         margin: auto;
+        margin-top: 3rem;
     }
 
     #register-btn {
