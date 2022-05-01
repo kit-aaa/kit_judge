@@ -31,7 +31,7 @@
                 <Label>{code.text}</Label>
             </Button>
         {/each}
-    </Group>
+    </Group
     <Card class="code-paper">
         <CodeMirror class="editor" bind:editor {options} />
     </Card>
