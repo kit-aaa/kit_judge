@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import Paper, { Title, Subtitle } from "@smui/paper";
     import Menu from "../component/userInfoMenu.svelte"
     const elevation = 10;
